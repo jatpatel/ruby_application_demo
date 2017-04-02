@@ -1,0 +1,17 @@
+<section class="category-content">
+  <div class="section-title">
+    <h2>List of Categories </h2>
+    <hr>
+  </div>
+
+
+  <ul class="list-group">
+    <% @categories.each do |category| %>
+        <li class="list-group-item">
+            <a href=<%= "/categories/#{category[:id]}/products" %>>
+                     <%= category[:name] %>
+            </a>
+        </li>
+    <% end %>
+  </ul>
+</section>

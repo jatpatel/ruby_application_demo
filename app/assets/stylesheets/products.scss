@@ -1,0 +1,44 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.product-content {
+
+  hr {
+    margin-top: 10px;
+  }
+
+  .product-table {
+    margin-top: 10px;
+
+    thead {
+      background: lightgrey;
+    }
+
+    tbody {
+      tr:nth-child(even) {
+        background: #f0f0f0;
+      }
+    }
+  }
+
+  .pagination {
+    background:#f8f8f8;
+    border: #e7e7e7;
+    margin: 0;
+    padding: 3px;
+
+    .current {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      background-color: #bebebe;
+      border: 1px solid #e5e5e5;
+      border-radius: 50%;
+      text-align: center;
+    }
+  }
+}
+
+

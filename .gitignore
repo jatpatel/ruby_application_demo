@@ -1,0 +1,11 @@
+# User-specific stuff:
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/dictionaries
+
+# assset caches
+/tmp
+/vendor/assets
+
+# Logs and databases #
+*.log

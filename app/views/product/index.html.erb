@@ -1,0 +1,49 @@
+<section class="product-content">
+  <div class="alert"></div>
+
+  <div class="section-title">
+    <h3>List of Products </h3><hr>
+
+    <div class="row">
+      <%= form_tag import_products_path, multipart: true, id: "fileupload" do %>
+          <div class="col-lg-2"><%= file_field_tag :file %></div>
+          <div class="col-lg-2"><%= submit_tag "Import", class: "btn btn-default" %></div>
+      <% end %>
+
+      <div class="pull-right">
+        <a class="btn" onclick="exportProducts()">
+          <span class="glyphicon glyphicon-download-alt" title="download"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <table class="table product-table">
+    <thead>
+    <tr>
+      <th>Product ID</th>
+      <th>Category</th>
+      <th>Product Name</th>
+      <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @products.each do |product| %>
+        <tr>
+          <td><%= product[:code] %></td>
+          <td><%= product[:category_name] %></td>
+          <td>
+            <a href=<%= "/products/#{product[:product_id]}" %>>
+              <%= product[:name] %>
+            </a>
+          </td>
+          <td><%= product[:price] %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+  <div class="pull-right pagination">
+    <%= will_paginate @products %>
+  </div>
+</section>
